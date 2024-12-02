@@ -13,7 +13,7 @@ export default defineConfig({
 	},
 	devServer: {
 		port: 3000,
-		disableHostCheck: true,
+		allowedHosts: 'all',
 	},
 	module: {
 		rules: [
