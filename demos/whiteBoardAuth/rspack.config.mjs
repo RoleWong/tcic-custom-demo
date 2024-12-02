@@ -12,7 +12,8 @@ export default defineConfig({
 		filename: "white-board-auth.js"
 	},
 	devServer: {
-		port: 3000
+		port: 3000,
+		disableHostCheck: true,
 	},
 	module: {
 		rules: [
