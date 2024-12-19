@@ -3,8 +3,12 @@ TCIC.SDK.instance
   .then(() => {
     // 如果是学生，隐藏他的添加白板，选择白板权限
     if (TCIC.SDK.instance.isStudent()) {
+      // 是否可以添加白板
       TCIC.SDK.instance.setFeatureAvailable("WhiteBoardList", true);
+      // 是否展示翻页按钮
       TCIC.SDK.instance.setFeatureAvailable("WhiteBoardPPT", false);
+      // 是否可以使用滚轮翻页
+      TCIC.SDK.instance.setFeatureAvailable("WhiteBoardPPT.WheelPaging", false);
     }
   });
 
