@@ -20,5 +20,9 @@ cd ./demos/SOME_DEMO
 pnpm dev
 
 ```
-在上课地址query 后面添加`&debugjs=http://localhost:3000/custom.js`，如果有 css, 再拼接`&debugcss=http://localhost:3000/custom.css`，即
-`&debugjs=http://localhost:3000/custom.js&debugcss=http://localhost:3000/custom.css`
+进入课堂后，在上课地址 query 后面添加`&debugjs=http://localhost:3000/custom.js`，如果有 css，再拼接`&debugcss=http://localhost:3000/custom.css`，即
+`&debugjs=http://localhost:3000/custom.js&debugcss=http://localhost:3000/custom.css`，课堂页面将会加载自定义的 js 和 css，从而可以进行自定义调试。
+
+### 生产部署
+
+在本地调试完成后，通过`npm run build`打包出js 和 css 文件，通过[自定义场景配置](https://cloud.tencent.com/document/product/1639/90204)上传打包的js 和 css 文件，即可在课堂中生效。
