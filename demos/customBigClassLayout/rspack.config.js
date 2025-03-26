@@ -2,6 +2,7 @@ const rspack = require('@rspack/core');
 const { VueLoaderPlugin } = require('vue-loader');
 
 /** @type {import('@rspack/cli').Configuration} */
+console.log('rspack.config.js', process.env.NODE_ENV);
 const config = {
   context: __dirname,
   entry: {
@@ -15,6 +16,8 @@ const config = {
 		allowedHosts: 'all',
     historyApiFallback: true,
 	},
+
+  devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
   
   experiments: {
     css: false,

@@ -5,10 +5,11 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "rspack build",
+    "build": "rspack build -m production",
     "dev": "rspack serve"
   },
   "dependencies": {
+    "@vueuse/core": "^13.0.0",
     "vue": "~3.5"
   },
   "devDependencies": {
