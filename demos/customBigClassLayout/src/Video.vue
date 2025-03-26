@@ -31,6 +31,8 @@ const videoSize = useVideoSize(videoAreaRef, videoCountRef);
 
 onMounted(() => {
   initVideos({ teacherVideo: teacherVideo.value, studentVideos: studentVideos.value });
+  const screenPlayerComponent = TCIC.SDK.instance.getComponent('screen-player-component');
+  videoAreaRef.value.appendChild(screenPlayerComponent);
   // 不展示气泡消息
   TCIC.SDK.instance.getComponent('quickmsg-show-component').getVueInstance().quickMsgVisible = false;
 });
