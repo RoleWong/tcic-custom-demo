@@ -1,5 +1,10 @@
 import { onMounted, ref } from 'vue';
-export default function useTask(taskId, onTaskUpdate) {
+
+declare const TCIC: any; 
+export default function useTask(
+  taskId: string,
+  onTaskUpdate?: (data: {type: string, payload: any}, taskInfo: any) => void
+) {
   const sessionId = ref('');
   onMounted(() => {
     sessionId.value = `${TCIC.SDK.instance.getUserId()}_${Math.floor(Math.random() * 65535)}`;
@@ -11,6 +16,9 @@ export default function useTask(taskId, onTaskUpdate) {
       const data = JSON.parse(taskInfo.content);
       if (data.sessionId === sessionId.value) {
         // 不需要处理自己的任务
+        return;
+      }
+      if (onTaskUpdate === undefined) {
         return;
       }
       onTaskUpdate(data, taskInfo);

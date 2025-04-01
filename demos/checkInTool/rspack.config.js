@@ -15,6 +15,9 @@ const config = {
 		allowedHosts: 'all',
     historyApiFallback: true,
 	},
+  resolve: {
+    extensions: ['.js', '.ts', '.vue', '.less'],
+  },
   
   experiments: {
     css: false,

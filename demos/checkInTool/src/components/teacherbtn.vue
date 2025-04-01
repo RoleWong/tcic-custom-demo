@@ -10,7 +10,9 @@ import useTask from '../hooks/useTask';
 const refreshCheckInList = () => {
   //TODO
 }
-const { updateTask } = useTask('custom-check-in-tool', (data) => {
+const { updateTask } = useTask('custom-check-in-tool');
+// 监听学生签到回调
+useTask('custom-check-in-tool-result', (data) => {
   // 任务更新回调
   if (data.type === 'student-check-in') {
     console.log('完成签到:', data.payload);
@@ -19,7 +21,7 @@ const { updateTask } = useTask('custom-check-in-tool', (data) => {
     // 例如调用一个方法来获取最新的签到数据
     refreshCheckInList();
   }
-});
+})
 const checkIn = () => {
   updateTask({
     type: 'ask-check-in',

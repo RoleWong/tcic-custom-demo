@@ -22,7 +22,7 @@ import useTask from '../hooks/useTask';
 
 const showModal = ref(false);
 const isCheckIn = ref(false);
-const { updateTask } = useTask('custom-check-in-tool', (data) => {
+useTask('custom-check-in-tool', (data) => {
   // 任务更新回调
   if (data.type === 'ask-check-in') {
     // 收到签到请求
@@ -39,6 +39,7 @@ const { updateTask } = useTask('custom-check-in-tool', (data) => {
     }
   }
 });
+const { updateTask } = useTask('custom-check-in-tool-result');
 const handleCheckIn = () => {
   isCheckIn.value = true;
   showModal.value = false;
