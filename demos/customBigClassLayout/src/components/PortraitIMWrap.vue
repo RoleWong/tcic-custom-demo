@@ -20,6 +20,7 @@ onMounted(() => {
     })
       .then((ele) => {
         imAreaRef.value.appendChild(ele);
+        ele.getVueInstance().notifyVisibilityChange(true);
       });
     });
 });
